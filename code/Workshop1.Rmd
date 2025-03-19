@@ -170,7 +170,7 @@ nrow and ncol control the number of rows (nrow) and columns (ncol).  Other optio
 We already used points:
 ```{r}
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displx, y = hwy))
+  geom_point(mapping = aes(x = displ, y = hwy))
 ```
 
 
@@ -183,6 +183,13 @@ ggplot(data = mpg) +
 ```
 ### Question: whey don't we use geom_line() here? What would that look like? ###
 
+```{r}
+# Same as above but using geom_line
+ggplot(data = mpg) + 
+  geom_line(mapping = aes(x = displ, y = hwy))
+```
+
+Answer: Using geom_line doesn't work because it assumes continuous data.
 
 So let’s recap. A geom is an object that your plot uses to represent the data. To change the geom type in your plot, simply change the geom function that you add to your plot template. Sometimes you may want to try a few things out, in which case you could use comments to help you remember what worked and what didn’t. 
 
@@ -190,10 +197,12 @@ So let’s recap. A geom is an object that your plot uses to represent the data.
 ```{r}
 ggplot(data = mpg) + 
   #geom_point(mapping = aes(x = displ, y = hwy)) + # points horrible 
-  geom_smooth(mappings = aes(x = displ, y = hwy)) # try smooth line
+  geom_smooth(mapping = aes(x = displ, y = hwy)) # try smooth line
 ```
 
 Question: how does R work out where to plot the line??? Can use the chunk output to inform us. Can also use the help menu.
+
+
 
 # Changing linetype
 ```{r}
@@ -221,7 +230,7 @@ ggplot(data = mpg) +
 We already did this one way
 ```{r}
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(xx = displ, y = hwy)) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
   geom_smooth(mapping = aes(x = displ, y = hwy))
 ```
 
@@ -250,15 +259,56 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 ```
 Question: what does the "se = FALSE" do?
 
+It stops ggplot from computing the standard error.
 
 # Exercise:
 1.  What geom would you use to draw a line chart? A boxplot? A histogram? An area chart?
+
+Line chart = geom_line
+Boxplot = geom_boxplot
+Histogram = geom_histogram
+Area chart = geom_area
+
 2.  Run this code in your head and predict what the output will look like. Then, run the code in R and check your predictions.
 
 ```{r}
-
+#Line
+ggplot(data = mpg) + 
+  geom_line(mapping = aes(x = displ, y = hwy))
 ```
 
+Line chart output, this was already used earlier in the section
+
+```{r}
+#Boxplot
+ggplot(data = mpg) + 
+  geom_boxplot(mapping = aes(x = displ, y = hwy))
+```
+This produces a single massive box for everything.
+
+```{r}
+# Facet boxplot
+ggplot(data = mpg) + 
+  geom_boxplot(mapping = aes(x = displ, y = hwy)) + 
+  facet_grid(drv ~ cyl)
+```
+
+This returns a seperate boxplot for different cylinder counts, but isn't particularly useful for this data.
+
+```{r}
+#histogram
+ggplot(data = mpg) + 
+  geom_histogram(mapping = aes(x = hwy))
+```
+Returns a histogram of highway efficiency, useful to check data distribution for analysis.
+
+```{r}
+#Area chart
+ggplot(data = mpg) + 
+  geom_area(mapping = aes(x = displ, y = hwy))
+```
+
+Very ugly area chart for displacement and highway efficiency.
 
 3.  Will these two graphs look different? Why/why not?
 ```{r}
@@ -271,6 +321,7 @@ ggplot() +
   geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
 ```
 
+They look the same, the code illustrates two different methods for selecting geometry in ggplot.
 
 # Transformations and stats
 
