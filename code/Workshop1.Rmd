@@ -124,7 +124,7 @@ Fixed, "+" should never be on a new file.
 
 # Faceting
 
-
++
 
 ## facet_wrap
 Split the plot out by car type (class)
@@ -157,6 +157,9 @@ ggplot(data = mpg) +
 
 # Exercise:
 Read ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? 
+
+
+nrow and ncol control the number of rows (nrow) and columns (ncol).  Other options for individual panels include "scales", "shrink", "drop", "as.table" "axes" and "axes labels".
 
 ```{r}
 
@@ -391,14 +394,6 @@ ggplot(data = mpg) +
   #geom_point(mapping = aes(x = displ, y = hwy), position = "jitter")
   geom_point(mapping = aes(x = displ, y = hwy))
 ```
-
-
-
-
-
-
-
-
 
 
 
