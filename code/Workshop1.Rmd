@@ -358,6 +358,8 @@ ggplot(data = demo) +
 ```
 Question: Why did we specify now specify a y axis?
 
+Answer:  Because we now have multiple different options that could be in the place of the y axis.
+
 # What if we want to know the proportion rather than the absolute frequency?
 ```{r}
 ggplot(data = diamonds) + 
@@ -367,6 +369,13 @@ ggplot(data = diamonds) +
 Question: does anyone get the warning that's in the workbook?
 Warning: `stat(prop)` was deprecated in ggplot2 3.4.0.
 If so, can use # geom_bar(mapping = aes(x = cut, y = stage(after_stat = prop), group = 1))
+
+```{r}
+# I got the error, fixed code
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = stage(after_stat = prop), group = 1))
+```
+
 
 # Plotting statistical details
 ```{r}
@@ -391,6 +400,9 @@ ggplot(data = diamonds) +
 ```
 Question: Does anyone notice anything different in the colour scheme of this plot?
 (Hint: It's in the viridis colour palette (colour blind friendly), but why is it different from the colour palette we used earlier?)
+
+ggplot automatically uses the more accessible colour palatte for certain data types.
+
 Check out the difference:
 ```{r}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
