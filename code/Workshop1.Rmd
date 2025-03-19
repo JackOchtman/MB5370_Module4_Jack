@@ -81,7 +81,11 @@ ggplot(data = mpg) +
 Another warning!!
 Question: When would using alpha (or size be appropriate??)
 
+<<<<<<< HEAD
 Answer: When using variables that have a small set range of values and is continuous.
+=======
+Answer: When using variables that have a small set range of values.
+>>>>>>> dac113de3155e6c0b9b11df1cc48f8c80b06f109
 
 # Change point shape by class:
 ```{r}
