@@ -120,8 +120,11 @@ ggplot(data = mpg) +
  geom_point(mapping = aes(x = displ, y = hwy)) 
 ```
 
+Fixed, "+" should never be on a new file.
 
 # Faceting
+
+
 
 ## facet_wrap
 Split the plot out by car type (class)
@@ -131,7 +134,7 @@ ggplot(data = mpg) +
   facet_wrap(~ class, nrow = 2)
 ```
 
-Fixed, "+" should never be on a new file.
+Use facet wrap to split the output into sub plot.
 
 ## facet_grid
 A separate facet for each combination of drive-type (e.g. 4WD) * number of cylinders
