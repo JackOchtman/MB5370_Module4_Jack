@@ -48,6 +48,8 @@ ggplot()
 ggplot(data = mpg)
 ```
 
+Both return blank charts
+
 We need to map some aesthetics!!
 
 # When you’re creating a plot, you essentially need two attributes of a plot: a geom and aesthetics.
@@ -78,6 +80,8 @@ ggplot(data = mpg) +
 ```
 Another warning!!
 Question: When would using alpha (or size be appropriate??)
+
+Answer: When using variables that have a small set range of values and is continuous.
 
 # Change point shape by class:
 ```{r}
