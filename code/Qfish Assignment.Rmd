@@ -18,9 +18,16 @@ knitr::opts_chunk$set(echo = TRUE)
 #library("janitor")
 ```
 
-```{r load files echo = T, results = 'hide'}
-shark <- read_csv("../data/shark.csv") |>
-  row_to_names(row_number = 1)
-summary(line)
-
+```{r load file echo = T, results = 'hide'}
+shark <- read_csv("../data/shark_size.csv") |>
+  row_to_names(row_number = 1, remove_rows_above = FALSE) |>
+  clean_names()
+summary(shark)
 ```
+
+```{r load file echo = T, results = 'hide'}
+shark_size <- 
+  shark |>
+  rename(small = x2m, large=x2m_2)
+```
+
