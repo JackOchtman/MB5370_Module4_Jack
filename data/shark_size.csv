@@ -1,0 +1,299 @@
+,,LengthCategory,,,
+Area,FinancialYear,< 2m,>= 2m,Non-shark,Grand Total
+Bribie Island,2017-18,,2,,2
+Bribie Island,2018-19,,1,,1
+Bribie Island,2019-20,1,1,,2
+Bribie Island,2020-21,,1,,1
+Bribie Island,2021-22,,1,1,2
+Bribie Island,2022-23,1,2,2,5
+Bribie Island,2023-24,,1,1,2
+Bribie Island,2024-25,4,3,1,8
+Bribie Island Total,,6,12,5,23
+Bundaberg,2000-01,13,13,7,33
+Bundaberg,2001-02,26,31,9,66
+Bundaberg,2002-03,29,41,11,81
+Bundaberg,2003-04,17,24,6,47
+Bundaberg,2004-05,27,31,13,71
+Bundaberg,2005-06,32,26,4,62
+Bundaberg,2006-07,33,15,4,52
+Bundaberg,2007-08,29,19,10,58
+Bundaberg,2008-09,23,23,10,56
+Bundaberg,2009-10,17,22,12,51
+Bundaberg,2010-11,32,16,14,62
+Bundaberg,2011-12,41,23,10,74
+Bundaberg,2012-13,34,23,8,65
+Bundaberg,2013-14,42,33,5,80
+Bundaberg,2014-15,26,21,13,60
+Bundaberg,2015-16,21,26,4,51
+Bundaberg,2016-17,33,20,1,54
+Bundaberg,2017-18,20,31,2,53
+Bundaberg,2018-19,18,32,,50
+Bundaberg,2019-20,29,36,1,66
+Bundaberg,2020-21,29,28,2,59
+Bundaberg,2021-22,36,41,1,78
+Bundaberg,2022-23,22,38,2,62
+Bundaberg,2023-24,23,37,,60
+Bundaberg,2024-25,44,36,,80
+Bundaberg Total,,696,686,149,1531
+Cairns,2000-01,17,25,9,51
+Cairns,2001-02,25,45,24,94
+Cairns,2002-03,21,32,18,71
+Cairns,2003-04,19,26,22,67
+Cairns,2004-05,42,39,29,110
+Cairns,2005-06,24,23,12,59
+Cairns,2006-07,33,20,19,72
+Cairns,2007-08,43,28,16,87
+Cairns,2008-09,34,29,19,82
+Cairns,2009-10,30,26,14,70
+Cairns,2010-11,53,31,31,115
+Cairns,2011-12,52,47,19,118
+Cairns,2012-13,34,35,26,95
+Cairns,2013-14,33,39,,72
+Cairns,2014-15,67,25,,92
+Cairns,2015-16,71,26,1,98
+Cairns,2016-17,30,19,1,50
+Cairns,2017-18,20,25,,45
+Cairns,2018-19,16,25,,41
+Cairns,2019-20,29,20,1,50
+Cairns,2020-21,41,33,,74
+Cairns,2021-22,34,20,3,57
+Cairns,2022-23,32,18,,50
+Cairns,2023-24,64,60,2,126
+Cairns,2024-25,110,99,5,214
+Cairns Total,,974,815,271,2060
+Capricorn Coast,2000-01,29,19,,48
+Capricorn Coast,2001-02,37,52,6,95
+Capricorn Coast,2002-03,33,48,7,88
+Capricorn Coast,2003-04,41,35,4,80
+Capricorn Coast,2004-05,45,29,,74
+Capricorn Coast,2005-06,44,28,3,75
+Capricorn Coast,2006-07,51,29,3,83
+Capricorn Coast,2007-08,45,31,2,78
+Capricorn Coast,2008-09,43,21,4,68
+Capricorn Coast,2009-10,44,23,,67
+Capricorn Coast,2010-11,36,13,1,50
+Capricorn Coast,2011-12,56,18,1,75
+Capricorn Coast,2012-13,115,22,15,152
+Capricorn Coast,2013-14,76,15,5,96
+Capricorn Coast,2014-15,43,16,6,65
+Capricorn Coast,2015-16,62,11,6,79
+Capricorn Coast,2016-17,37,8,2,47
+Capricorn Coast,2017-18,21,5,2,28
+Capricorn Coast,2018-19,55,6,2,63
+Capricorn Coast,2019-20,28,4,1,33
+Capricorn Coast,2020-21,39,14,,53
+Capricorn Coast,2021-22,165,51,12,228
+Capricorn Coast,2022-23,147,54,14,215
+Capricorn Coast,2023-24,162,96,5,263
+Capricorn Coast,2024-25,204,81,6,291
+Capricorn Coast Total,,1658,729,107,2494
+Gladstone,2000-01,7,8,,15
+Gladstone,2001-02,9,16,,25
+Gladstone,2002-03,14,11,2,27
+Gladstone,2003-04,34,9,7,50
+Gladstone,2004-05,37,5,9,51
+Gladstone,2005-06,35,11,3,49
+Gladstone,2006-07,54,10,1,65
+Gladstone,2007-08,33,10,,43
+Gladstone,2008-09,53,7,,60
+Gladstone,2009-10,48,10,,58
+Gladstone,2010-11,54,6,,60
+Gladstone,2011-12,79,6,,85
+Gladstone,2012-13,43,3,,46
+Gladstone,2013-14,50,6,1,57
+Gladstone,2014-15,41,11,,52
+Gladstone,2015-16,47,7,,54
+Gladstone,2016-17,43,5,,48
+Gladstone,2017-18,26,5,,31
+Gladstone,2018-19,34,12,,46
+Gladstone,2019-20,33,5,1,39
+Gladstone,2020-21,18,8,3,29
+Gladstone,2021-22,30,13,2,45
+Gladstone,2022-23,42,12,1,55
+Gladstone,2023-24,82,23,7,112
+Gladstone,2024-25,110,31,4,145
+Gladstone Total,,1056,250,41,1347
+Gold Coast,2000-01,18,29,45,92
+Gold Coast,2001-02,23,55,60,138
+Gold Coast,2002-03,46,25,53,124
+Gold Coast,2003-04,42,28,49,119
+Gold Coast,2004-05,66,16,48,130
+Gold Coast,2005-06,35,21,53,109
+Gold Coast,2006-07,25,14,21,60
+Gold Coast,2007-08,24,7,28,59
+Gold Coast,2008-09,16,21,31,68
+Gold Coast,2009-10,24,13,243,280
+Gold Coast,2010-11,25,11,42,78
+Gold Coast,2011-12,33,15,43,91
+Gold Coast,2012-13,21,16,38,75
+Gold Coast,2013-14,14,21,36,71
+Gold Coast,2014-15,24,20,44,88
+Gold Coast,2015-16,18,30,23,71
+Gold Coast,2016-17,31,19,61,111
+Gold Coast,2017-18,34,17,55,106
+Gold Coast,2018-19,37,23,72,132
+Gold Coast,2019-20,41,19,41,101
+Gold Coast,2020-21,55,27,49,131
+Gold Coast,2021-22,49,43,26,118
+Gold Coast,2022-23,42,20,32,94
+Gold Coast,2023-24,46,32,26,104
+Gold Coast,2024-25,30,24,18,72
+Gold Coast Total,,819,566,1237,2622
+Mackay,2000-01,11,51,5,67
+Mackay,2001-02,19,84,43,146
+Mackay,2002-03,16,88,11,115
+Mackay,2003-04,23,72,21,116
+Mackay,2004-05,15,76,20,111
+Mackay,2005-06,18,44,7,69
+Mackay,2006-07,10,53,20,83
+Mackay,2007-08,10,65,8,83
+Mackay,2008-09,9,53,14,76
+Mackay,2009-10,5,76,2,83
+Mackay,2010-11,15,43,8,66
+Mackay,2011-12,23,43,15,81
+Mackay,2012-13,11,82,7,100
+Mackay,2013-14,2,100,42,144
+Mackay,2014-15,11,83,7,101
+Mackay,2015-16,15,71,50,136
+Mackay,2016-17,11,43,1,55
+Mackay,2017-18,15,27,4,46
+Mackay,2018-19,13,32,,45
+Mackay,2019-20,12,39,2,53
+Mackay,2020-21,31,47,6,84
+Mackay,2021-22,27,53,1,81
+Mackay,2022-23,16,59,2,77
+Mackay,2023-24,25,56,2,83
+Mackay,2024-25,293,185,18,496
+Mackay Total,,656,1625,316,2597
+Nth Stradbroke Is.,2000-01,,8,1,9
+Nth Stradbroke Is.,2001-02,,17,8,25
+Nth Stradbroke Is.,2002-03,5,9,13,27
+Nth Stradbroke Is.,2003-04,1,5,7,13
+Nth Stradbroke Is.,2004-05,1,2,14,17
+Nth Stradbroke Is.,2005-06,2,3,2,7
+Nth Stradbroke Is.,2006-07,22,9,9,40
+Nth Stradbroke Is.,2007-08,10,11,4,25
+Nth Stradbroke Is.,2008-09,5,10,6,21
+Nth Stradbroke Is.,2009-10,12,12,3,27
+Nth Stradbroke Is.,2010-11,9,14,,23
+Nth Stradbroke Is.,2011-12,13,8,1,22
+Nth Stradbroke Is.,2012-13,6,11,2,19
+Nth Stradbroke Is.,2013-14,3,8,1,12
+Nth Stradbroke Is.,2014-15,5,4,1,10
+Nth Stradbroke Is.,2015-16,6,14,2,22
+Nth Stradbroke Is.,2016-17,2,13,5,20
+Nth Stradbroke Is.,2017-18,7,7,2,16
+Nth Stradbroke Is.,2018-19,1,20,1,22
+Nth Stradbroke Is.,2019-20,2,9,1,12
+Nth Stradbroke Is.,2020-21,1,15,11,27
+Nth Stradbroke Is.,2021-22,4,18,12,34
+Nth Stradbroke Is.,2022-23,7,8,11,26
+Nth Stradbroke Is.,2023-24,3,14,6,23
+Nth Stradbroke Is.,2024-25,12,27,7,46
+Nth Stradbroke Is. Total,,139,276,130,545
+Rainbow Beach,2000-01,5,12,7,24
+Rainbow Beach,2001-02,10,19,6,35
+Rainbow Beach,2002-03,10,18,14,42
+Rainbow Beach,2003-04,16,5,11,32
+Rainbow Beach,2004-05,20,28,62,110
+Rainbow Beach,2005-06,27,23,62,112
+Rainbow Beach,2006-07,31,16,29,76
+Rainbow Beach,2007-08,30,21,42,93
+Rainbow Beach,2008-09,28,34,25,87
+Rainbow Beach,2009-10,23,26,32,81
+Rainbow Beach,2010-11,22,46,17,85
+Rainbow Beach,2011-12,25,32,11,68
+Rainbow Beach,2012-13,28,37,14,79
+Rainbow Beach,2013-14,15,53,9,77
+Rainbow Beach,2014-15,28,27,13,68
+Rainbow Beach,2015-16,14,26,10,50
+Rainbow Beach,2016-17,7,20,28,55
+Rainbow Beach,2017-18,27,11,24,62
+Rainbow Beach,2018-19,12,16,40,68
+Rainbow Beach,2019-20,20,21,31,72
+Rainbow Beach,2020-21,22,18,50,90
+Rainbow Beach,2021-22,16,31,41,88
+Rainbow Beach,2022-23,20,14,35,69
+Rainbow Beach,2023-24,31,13,28,72
+Rainbow Beach,2024-25,21,21,19,61
+Rainbow Beach Total,,508,588,660,1756
+Sunshine Coast North,2000-01,20,34,24,78
+Sunshine Coast North,2001-02,20,46,27,93
+Sunshine Coast North,2002-03,30,56,27,113
+Sunshine Coast North,2003-04,13,20,24,57
+Sunshine Coast North,2004-05,17,33,41,91
+Sunshine Coast North,2005-06,24,29,31,84
+Sunshine Coast North,2006-07,21,19,31,71
+Sunshine Coast North,2007-08,25,27,27,79
+Sunshine Coast North,2008-09,26,21,23,70
+Sunshine Coast North,2009-10,16,24,15,55
+Sunshine Coast North,2010-11,30,16,18,64
+Sunshine Coast North,2011-12,7,25,9,41
+Sunshine Coast North,2012-13,8,22,8,38
+Sunshine Coast North,2013-14,8,24,6,38
+Sunshine Coast North,2014-15,26,25,6,57
+Sunshine Coast North,2015-16,18,19,7,44
+Sunshine Coast North,2016-17,13,15,20,48
+Sunshine Coast North,2017-18,41,15,15,71
+Sunshine Coast North,2018-19,38,39,32,109
+Sunshine Coast North,2019-20,31,20,33,84
+Sunshine Coast North,2020-21,35,27,31,93
+Sunshine Coast North,2021-22,38,20,32,90
+Sunshine Coast North,2022-23,43,36,20,99
+Sunshine Coast North,2023-24,49,40,34,123
+Sunshine Coast North,2024-25,57,37,31,125
+Sunshine Coast North Total,,654,689,572,1915
+Sunshine Coast South,2017-18,6,7,5,18
+Sunshine Coast South,2018-19,8,9,8,25
+Sunshine Coast South,2019-20,7,2,3,12
+Sunshine Coast South,2020-21,11,5,12,28
+Sunshine Coast South,2021-22,16,15,8,39
+Sunshine Coast South,2022-23,21,9,11,41
+Sunshine Coast South,2023-24,20,13,8,41
+Sunshine Coast South,2024-25,27,20,7,54
+Sunshine Coast South Total,,116,80,62,258
+Sunshine Coast South & Bribie Island,2000-01,10,15,6,31
+Sunshine Coast South & Bribie Island,2001-02,18,18,18,54
+Sunshine Coast South & Bribie Island,2002-03,27,11,24,62
+Sunshine Coast South & Bribie Island,2003-04,18,9,20,47
+Sunshine Coast South & Bribie Island,2004-05,9,13,12,34
+Sunshine Coast South & Bribie Island,2005-06,16,18,15,49
+Sunshine Coast South & Bribie Island,2006-07,8,7,29,44
+Sunshine Coast South & Bribie Island,2007-08,12,18,12,42
+Sunshine Coast South & Bribie Island,2008-09,16,9,8,33
+Sunshine Coast South & Bribie Island,2009-10,8,6,13,27
+Sunshine Coast South & Bribie Island,2010-11,14,11,10,35
+Sunshine Coast South & Bribie Island,2011-12,14,6,12,32
+Sunshine Coast South & Bribie Island,2012-13,8,10,8,26
+Sunshine Coast South & Bribie Island,2013-14,2,5,10,17
+Sunshine Coast South & Bribie Island,2014-15,11,11,7,29
+Sunshine Coast South & Bribie Island,2015-16,8,10,9,27
+Sunshine Coast South & Bribie Island,2016-17,10,1,17,28
+Sunshine Coast South & Bribie Island Total,,209,178,230,617
+Townsville,2000-01,44,17,9,70
+Townsville,2001-02,24,29,14,67
+Townsville,2002-03,36,26,11,73
+Townsville,2003-04,37,31,14,82
+Townsville,2004-05,57,34,7,98
+Townsville,2005-06,53,33,13,99
+Townsville,2006-07,40,35,17,92
+Townsville,2007-08,49,38,8,95
+Townsville,2008-09,58,45,10,113
+Townsville,2009-10,73,54,20,147
+Townsville,2010-11,100,39,32,171
+Townsville,2011-12,91,58,21,170
+Townsville,2012-13,99,44,18,161
+Townsville,2013-14,59,58,16,133
+Townsville,2014-15,78,36,15,129
+Townsville,2015-16,72,55,10,137
+Townsville,2016-17,61,48,7,116
+Townsville,2017-18,72,33,7,112
+Townsville,2018-19,60,49,4,113
+Townsville,2019-20,54,32,13,99
+Townsville,2020-21,90,59,10,159
+Townsville,2021-22,78,55,12,145
+Townsville,2022-23,93,56,3,152
+Townsville,2023-24,123,58,11,192
+Townsville,2024-25,222,97,18,337
+Townsville Total,,1823,1119,320,3262
+Grand Total,,9314,7613,4100,21027
