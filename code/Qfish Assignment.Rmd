@@ -28,6 +28,10 @@ summary(shark)
 ```{r load file echo = T, results = 'hide'}
 shark_size <- 
   shark |>
-  rename(small = x2m, large=x2m_2)
+  rename(year = financial_year, small = x2m, large=x2m_2) |>
+  mutate(year = as.numeric(sub(".*-(\\d{2})", "20\\1", year)))
+shark_size
 ```
+
+
 
