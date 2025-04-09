@@ -10,20 +10,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r setup}
+```{r setup echo = T, results = 'hide'}
 # Install and load tidyverse, run if needed.
-#install.packages("tidyverse")
-#library("tidyverse")
-#install.packages("janitor")
-#library("janitor")
+install.packages("tidyverse")
+library("tidyverse")
+install.packages("janitor")
+library("janitor")
 ```
+
 
 ```{r load file echo = T, results = 'hide'}
 shark <- read_csv("../data/shark_size.csv") |>
   row_to_names(row_number = 1, remove_rows_above = FALSE) |>
   clean_names()
-summary(shark)
+shark
 ```
+
 
 ```{r load file echo = T, results = 'hide'}
 shark_size <- 
@@ -33,5 +35,29 @@ shark_size <-
 shark_size
 ```
 
+
+```{r load file echo = T, results = 'hide'}
+shark_size <- 
+  shark |>
+  rename(year = financial_year, small = x2m, large=x2m_2) |>
+  mutate(year = as.numeric(sub(".*-(\\d{2})", "20\\1", year)))
+shark_size
+```
+
+
+```{r load file echo = T, results = 'hide'}
+shark_size <- 
+  shark_size |>
+  filter(!is.na(year))
+shark_size
+```
+
+
+```{r load file echo = T, results = 'hide'}
+shark_size <- 
+  shark_size |>
+  filter(!is.na(year))
+shark_size
+```
 
 
