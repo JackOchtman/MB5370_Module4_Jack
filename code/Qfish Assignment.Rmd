@@ -38,9 +38,8 @@ shark_size
 
 ```{r load file echo = T, results = 'hide'}
 shark_size <- 
-  shark |>
-  rename(year = financial_year, small = x2m, large=x2m_2) |>
-  mutate(year = as.numeric(sub(".*-(\\d{2})", "20\\1", year)))
+  shark_size |>
+  mutate_at(vars(small, large), as.numeric)
 shark_size
 ```
 
@@ -60,4 +59,73 @@ shark_size <-
 shark_size
 ```
 
+```{r load file echo = T, results = 'hide'}
+shark_size <- shark_size %>%
+  filter(area != "Bribie Island") %>%
+  filter(area != "Sunshine Coast South & Bribie Island") %>%
+  filter(area != "Sunshine Coast South")
+shark_size
+```
 
+
+```{r load file echo = T, results = 'hide'}
+shark_size <- shark_size %>%
+  mutate(across(where(is.numeric), ~replace_na(., 0)))
+shark_size
+```
+
+
+```{r load file echo = T, results = 'show'}
+ggplot(shark_size, aes(x = year, y = small, color = area)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+    theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()) +
+    labs(title = "Catch of <2m Sharks by Location",
+  x = "Year",
+  y = "No. of <2m Sharks Caught")
+```
+
+```{r load file echo = T, results = 'show'}
+ggplot(shark_size, aes(x = year, y = large, color = area)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+    theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()) +
+    labs(title = "Catch of ≥m Sharks by Location",
+  x = "Year",
+  y = "No. of ≥2m Sharks Caught")
+```
+
+
+```{r load file echo = T, results = 'show'}
+facet_plot <- ggplot() +
+  geom_smooth(data = shark_size, aes(x = year, y = small, color = "<2m"), method = "loess", se = FALSE) +
+  geom_smooth(data = shark_size, aes(x = year, y = large, color = "≥2m"), method = "loess", se = FALSE) +
+  facet_wrap(~ area) +
+  scale_color_manual(values = c("<2m" = "#E69F00", "≥2m" = "#56B4E9")) +  # Manually set colors for Small and Large
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.background = element_rect(fill = "white"),
+    panel.background = element_rect(fill = "white"),
+    strip.background = element_rect(fill = "white"),
+    axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_y_continuous(limits = c(0, NA)) +
+  labs(
+    title = "Catch of Sharks by Size and Location",
+    x = "Year",
+    y = "No. of Sharks Caught",
+    color = "Shark Size"
+  )
+
+# To save the plot
+ggsave("plots/shark_catch_plot.png", plot = facet_plot, width = 8, height = 6, dpi = 300)
+
+print(facet_plot)
+```
