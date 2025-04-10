@@ -9,13 +9,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Install tidyverse and janitor packages.
 
 ```{r setup echo = T, results = 'hide'}
 # Install and load tidyverse, run if needed.
-install.packages("tidyverse")
-library("tidyverse")
-install.packages("janitor")
-library("janitor")
+#install.packages("tidyverse")
+#library("tidyverse")
+#install.packages("janitor")
+#library("janitor")
 ```
 
 
@@ -51,13 +52,6 @@ shark_size <-
 shark_size
 ```
 
-
-```{r load file echo = T, results = 'hide'}
-shark_size <- 
-  shark_size |>
-  filter(!is.na(year))
-shark_size
-```
 
 ```{r load file echo = T, results = 'hide'}
 shark_size <- shark_size %>%
@@ -104,10 +98,12 @@ ggplot(shark_size, aes(x = year, y = large, color = area)) +
 
 ```{r load file echo = T, results = 'show'}
 facet_plot <- ggplot() +
-  geom_smooth(data = shark_size, aes(x = year, y = small, color = "<2m"), method = "loess", se = FALSE) +
-  geom_smooth(data = shark_size, aes(x = year, y = large, color = "≥2m"), method = "loess", se = FALSE) +
+  geom_line(data = shark_size, aes(x = year, y = small, color = "<2m"), linewidth = 0.25) +
+  geom_line(data = shark_size, aes(x = year, y = large, color = "≥2m"), linewidth = 0.25) +
+  geom_point(data = shark_size, aes(x = year, y = small, color = "<2m"), shape = 16, size = 1) +
+  geom_point(data = shark_size, aes(x = year, y = large, color = "≥2m"), shape = 17, size = 1) +
   facet_wrap(~ area) +
-  scale_color_manual(values = c("<2m" = "#E69F00", "≥2m" = "#56B4E9")) +  # Manually set colors for Small and Large
+  scale_color_manual(values = c("<2m" = "#E69F00", "≥2m" = "#56B4E9")) +
   theme_minimal() +
   theme(
     panel.grid.major = element_blank(),
@@ -116,16 +112,13 @@ facet_plot <- ggplot() +
     panel.background = element_rect(fill = "white"),
     strip.background = element_rect(fill = "white"),
     axis.text.x = element_text(angle = 90, hjust = 1)) +
-  scale_y_continuous(limits = c(0, NA)) +
   labs(
     title = "Catch of Sharks by Size and Location",
     x = "Year",
     y = "No. of Sharks Caught",
-    color = "Shark Size"
-  )
+    color = "Shark Size")
 
-# To save the plot
-ggsave("plots/shark_catch_plot.png", plot = facet_plot, width = 8, height = 6, dpi = 300)
+ggsave("../plots/shark_catch_plot.png", plot = facet_plot, width = 8, height = 6, dpi = 300)
 
 print(facet_plot)
 ```
