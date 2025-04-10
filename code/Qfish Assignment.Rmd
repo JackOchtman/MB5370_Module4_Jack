@@ -9,94 +9,87 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Install tidyverse and janitor packages.
+# MB5370 Module 4 QFish
+
+### Jack Ochtman
+
+This script analyses shark drumline catch data from qfish.fisheries.qld.gov.au, separated into sharks \<2m in size and ≥2m in size.
+
+## Initial Setup
+
+Loads packages and dataset for analysis, sets and cleans column names.
 
 ```{r setup echo = T, results = 'hide'}
 # Install and load tidyverse, run if needed.
 #install.packages("tidyverse")
 #library("tidyverse")
-#install.packages("janitor")
-#library("janitor")
 ```
-
 
 ```{r load file echo = T, results = 'hide'}
 shark <- read_csv("../data/shark_size.csv") |>
   row_to_names(row_number = 1, remove_rows_above = FALSE) |>
-  clean_names()
+  clean_names() # Load CSV and do basic formatting.  Open to validate.
 shark
 ```
 
+## Data wrangling
 
-```{r load file echo = T, results = 'hide'}
+The dataset from QFish is unsuitable for analysis as-is. To suit this project financial year was converted to year, total values were removed, and size values were set to numeric (previously categorical).
+
+```{r column setup echo = T, results = 'hide'}
 shark_size <- 
   shark |>
-  rename(year = financial_year, small = x2m, large=x2m_2) |>
-  mutate(year = as.numeric(sub(".*-(\\d{2})", "20\\1", year)))
+  rename(year = financial_year, small = x2m, large=x2m_2) |> # Corrects column names
+  mutate(year = as.numeric(sub(".*-(\\d{2})", "20\\1", year))) |> # Changes FY to year, e.g. 2017-18 -> 2018
+  filter(!is.na(year)) |> # Removes NA year values, this removes all "total" rows.
+  mutate_at(vars(small, large), as.numeric) # Sets size data as numeric.
 shark_size
 ```
 
+The locations Bribie Island and Sunchine Coast contained incomplete data due to drumlines being installed later than in other locations. These locations, as well as their combined data, were removed prior to analysis. Additionally, the dataset had 0 values as blank cells, which were imported as "NA" and need to be changed to "0".
 
-```{r load file echo = T, results = 'hide'}
-shark_size <- 
-  shark_size |>
-  mutate_at(vars(small, large), as.numeric)
-shark_size
-```
-
-
-```{r load file echo = T, results = 'hide'}
-shark_size <- 
-  shark_size |>
-  filter(!is.na(year))
-shark_size
-```
-
-
-```{r load file echo = T, results = 'hide'}
+```{r Data correction echo = T, results = 'hide'}
 shark_size <- shark_size %>%
   filter(area != "Bribie Island") %>%
   filter(area != "Sunshine Coast South & Bribie Island") %>%
-  filter(area != "Sunshine Coast South")
+  filter(area != "Sunshine Coast South") %>% # Remove locations with incomplete data
+  mutate(across(where(is.numeric), ~replace_na(., 0))) # Replaces NA values with 0
 shark_size
 ```
 
+## Plotting
 
-```{r load file echo = T, results = 'hide'}
-shark_size <- shark_size %>%
-  mutate(across(where(is.numeric), ~replace_na(., 0)))
-shark_size
-```
+Following data wrangling results are plotted. Included are two unused plots showing \<2m and ≥2m sharks separately, these were useful for viewing trends. The finalised plot is faceted by location, allowing size differences to be seen more clearly.
 
-
-```{r load file echo = T, results = 'show'}
+```{r plot small shark echo = T, results = 'show'}
 ggplot(shark_size, aes(x = year, y = small, color = area)) +
   geom_line() +
-  geom_point() +
+  geom_point() + # Plots <2m shark catch as a line plot with points for each year.
   theme_minimal() +
     theme(
     panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()) +
+    panel.grid.minor = element_blank()) + # Remove grid
     labs(title = "Catch of <2m Sharks by Location",
   x = "Year",
   y = "No. of <2m Sharks Caught")
 ```
 
-```{r load file echo = T, results = 'show'}
+```{r plot large shark echo = T, results = 'show'}
 ggplot(shark_size, aes(x = year, y = large, color = area)) +
   geom_line() +
-  geom_point() +
+  geom_point() + # Plots ≥2m shark catch as a line plot with points for each year.
   theme_minimal() +
     theme(
     panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()) +
+    panel.grid.minor = element_blank()) + # Remove grid
     labs(title = "Catch of ≥m Sharks by Location",
   x = "Year",
   y = "No. of ≥2m Sharks Caught")
 ```
 
+Below is the finalised facet plot, showing small and large size catch numbers for each location.
 
-```{r load file echo = T, results = 'show'}
+```{r final plot echo = T, results = 'show'}
 facet_plot <- ggplot() +
   geom_line(data = shark_size, aes(x = year, y = small, color = "<2m"), linewidth = 0.25) +
   geom_line(data = shark_size, aes(x = year, y = large, color = "≥2m"), linewidth = 0.25) +
@@ -111,14 +104,14 @@ facet_plot <- ggplot() +
     plot.background = element_rect(fill = "white"),
     panel.background = element_rect(fill = "white"),
     strip.background = element_rect(fill = "white"),
-    axis.text.x = element_text(angle = 90, hjust = 1)) +
+    axis.text.x = element_text(angle = 90, hjust = 1)) + # Removes 
   labs(
     title = "Catch of Sharks by Size and Location",
     x = "Year",
     y = "No. of Sharks Caught",
     color = "Shark Size")
 
-ggsave("../plots/shark_catch_plot.png", plot = facet_plot, width = 8, height = 6, dpi = 300)
+ggsave("../plots/shark_catch_plot.png", plot = facet_plot, width = 8, height = 6, dpi = 300) # Saves plot for publication
 
-print(facet_plot)
+print(facet_plot) # Opens plot in script
 ```
