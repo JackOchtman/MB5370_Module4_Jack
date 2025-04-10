@@ -20,7 +20,7 @@ This script analyses shark drumline catch data from qfish.fisheries.qld.gov.au, 
 Loads packages and dataset for analysis, sets and cleans column names.
 
 ```{r echo=T, message=FALSE, warning=FALSE, results='hide'}
-# Install and load tidyverse and janitor packages, run if needed.
+# Install and load tidyverse and janitor packages, run install lines only if needed.
 #install.packages("tidyverse")
 library("tidyverse")
 #install.packages("janitor")
