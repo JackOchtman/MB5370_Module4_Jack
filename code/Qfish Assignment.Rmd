@@ -13,19 +13,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Jack Ochtman
 
-This script analyses shark drumline catch data from qfish.fisheries.qld.gov.au, separated into sharks \<2m in size and ≥2m in size.
+This script analyses shark drumline catch data from qfish.fisheries.qld.gov.au, separated into sharks \<2m in size and ≥2m in size. By plotting both size classes trends in the relative catch of small and large species/individuals can be observed, which may represent shark population trends.
 
 ## Initial Setup
 
 Loads packages and dataset for analysis, sets and cleans column names.
 
-```{r setup echo = T, results = 'hide'}
-# Install and load tidyverse, run if needed.
+```{r echo=T, message=FALSE, warning=FALSE, results='hide'}
+# Install and load tidyverse and janitor packages, run if needed.
 #install.packages("tidyverse")
-#library("tidyverse")
+library("tidyverse")
+#install.packages("janitor")
+library("janitor")
 ```
 
-```{r load file echo = T, results = 'hide'}
+```{r echo=T, message=FALSE, warning=FALSE, results='hide'}
 shark <- read_csv("../data/shark_size.csv") |>
   row_to_names(row_number = 1, remove_rows_above = FALSE) |>
   clean_names() # Load CSV and do basic formatting.  Open to validate.
@@ -36,7 +38,7 @@ shark
 
 The dataset from QFish is unsuitable for analysis as-is. To suit this project financial year was converted to year, total values were removed, and size values were set to numeric (previously categorical).
 
-```{r column setup echo = T, results = 'hide'}
+```{r echo = T, results = 'hide'}
 shark_size <- 
   shark |>
   rename(year = financial_year, small = x2m, large=x2m_2) |> # Corrects column names
@@ -48,7 +50,7 @@ shark_size
 
 The locations Bribie Island and Sunchine Coast contained incomplete data due to drumlines being installed later than in other locations. These locations, as well as their combined data, were removed prior to analysis. Additionally, the dataset had 0 values as blank cells, which were imported as "NA" and need to be changed to "0".
 
-```{r Data correction echo = T, results = 'hide'}
+```{r echo = T, results = 'hide'}
 shark_size <- shark_size %>%
   filter(area != "Bribie Island") %>%
   filter(area != "Sunshine Coast South & Bribie Island") %>%
@@ -61,7 +63,7 @@ shark_size
 
 Following data wrangling results are plotted. Included are two unused plots showing \<2m and ≥2m sharks separately, these were useful for viewing trends. The finalised plot is faceted by location, allowing size differences to be seen more clearly.
 
-```{r plot small shark echo = T, results = 'show'}
+```{r echo = T, results = 'show'}
 ggplot(shark_size, aes(x = year, y = small, color = area)) +
   geom_line() +
   geom_point() + # Plots <2m shark catch as a line plot with points for each year.
@@ -74,7 +76,7 @@ ggplot(shark_size, aes(x = year, y = small, color = area)) +
   y = "No. of <2m Sharks Caught")
 ```
 
-```{r plot large shark echo = T, results = 'show'}
+```{r echo = T, results = 'show'}
 ggplot(shark_size, aes(x = year, y = large, color = area)) +
   geom_line() +
   geom_point() + # Plots ≥2m shark catch as a line plot with points for each year.
@@ -89,13 +91,13 @@ ggplot(shark_size, aes(x = year, y = large, color = area)) +
 
 Below is the finalised facet plot, showing small and large size catch numbers for each location.
 
-```{r final plot echo = T, results = 'show'}
+```{r echo = T, results = 'show'}
 facet_plot <- ggplot() +
   geom_line(data = shark_size, aes(x = year, y = small, color = "<2m"), linewidth = 0.25) +
   geom_line(data = shark_size, aes(x = year, y = large, color = "≥2m"), linewidth = 0.25) +
   geom_point(data = shark_size, aes(x = year, y = small, color = "<2m"), shape = 16, size = 1) +
   geom_point(data = shark_size, aes(x = year, y = large, color = "≥2m"), shape = 17, size = 1) +
-  facet_wrap(~ area) +
+  facet_wrap(~ area) + # Seperate colours and point symbols for shark sizes, faceted by area.
   scale_color_manual(values = c("<2m" = "#E69F00", "≥2m" = "#56B4E9")) +
   theme_minimal() +
   theme(
@@ -104,7 +106,7 @@ facet_plot <- ggplot() +
     plot.background = element_rect(fill = "white"),
     panel.background = element_rect(fill = "white"),
     strip.background = element_rect(fill = "white"),
-    axis.text.x = element_text(angle = 90, hjust = 1)) + # Removes 
+    axis.text.x = element_text(angle = 90, hjust = 1)) + # Removes grid and sets background to white.
   labs(
     title = "Catch of Sharks by Size and Location",
     x = "Year",
@@ -113,5 +115,5 @@ facet_plot <- ggplot() +
 
 ggsave("../plots/shark_catch_plot.png", plot = facet_plot, width = 8, height = 6, dpi = 300) # Saves plot for publication
 
-print(facet_plot) # Opens plot in script
+print(facet_plot) # Opens plot in markdown
 ```
